@@ -13,10 +13,12 @@ C:>SharpTask.exe
 
         --GetRunning <Computer|local|hostname|ip>
 ```
+# 1 Add a task on a remote system.
 ```
 beacon> execute-assembly SharpTask.exe --AddTask workstn.foo.local 12:30 \ Test "Testing This Thing" C:\Windows\notepad.exe
 beacon> 
 ```
+# 2 Verify that the task was created.
 ```
 beacon> execute-assembly SharpTask.exe --ListAll workstn.foo.local \
 
@@ -41,6 +43,7 @@ Last:   6/29/2019 10:17:54 PM
 Result: 267009
 Next:   6/30/2019 12:30:00 PM
 ```
+# 3 Verify that the task is running.
 ```
 beacon> execute-assembly SharpTask.exe --GetRunning workstn.foo.local
 
@@ -60,10 +63,12 @@ Name:   Test
 Desc:   Testing This Thing
 Action: C:\Windows\notepad.exe
 ```
+# 4 Stop and remove the task.
 ```
 beacon> execute-assembly SharpTask.exe --RemoveTask workstn.foo.local \ Test
 beacon> 
 ```
+# 5 Verify that the task was removed.
 ```
 beacon> execute-assembly SharpTask.exe --ListAll workstn.foo.local \
 
