@@ -2,10 +2,10 @@
 SharpTask is a simple code set to interact with the Task Scheduler service API using the same DCERPC process as schtasks, which open with TCP port 135 and is followed by the use of an ephemeral TCP port. This code is compatible with Cobalt Strike.
 
 ```
-C:>SharpTask.exe --GetRunning
+C:>SharpTask.exe
 
 [-] Usage:
-        --ListAll <Computer|local|hostname|ip> <Folder|\|\Microsoft\Windows\AppID>
+        --ListAll <Computer|local|hostname|ip> <Folder|\|\Microsoft\Windows>
 
         --AddTask <Computer|local|hostname|ip> <24h:time|12:30> <Folder|\|\Microsoft\Windows> <Name|VerifiedCheckboxUnchecker> <Description|"Inspects stuff..."> <ExecutablePath|C:\Windows\notepad.exe> <ExecutableArgs|Optional>
 
