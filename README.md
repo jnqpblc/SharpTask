@@ -1,5 +1,5 @@
 # SharpTask
-SharpTask a simple code set to interact with the Task Scheduler service api and is compatible with Cobalt Strike.
+SharpTask is a simple code set to interact with the Task Scheduler service api and is compatible with Cobalt Strike.
 
 ```
 C:>SharpTask.exe --GetRunning
