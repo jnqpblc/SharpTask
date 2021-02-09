@@ -19,7 +19,7 @@ namespace SharpTask
 				string taskFolder = args[2];
 				ListAll(computer, taskFolder);
 			}
-			else if ((args[0].ToUpper() == "--ADDTASK") && (args.Length == 7))
+			else if ((args[0].ToUpper() == "--ADDTASK") && (args.Length == 7 || args.Length==8))
 			{
 				string computer = args[1];
 				string[] time = args[2].Split(':');
@@ -31,7 +31,7 @@ namespace SharpTask
 				string actionPath = args[6];
 				if (args.Length == 8)
 				{
-					string actionArgs = args[8];
+					string actionArgs = args[7];
 					AddTask(computer, hour, minute, taskFolder, taskName, taskDescription, actionPath, actionArgs);
 				}
 				else
@@ -117,7 +117,9 @@ namespace SharpTask
 
 				taskDefinition.Triggers.Add(trigger);
 
-				taskDefinition.Actions.Add(new ExecAction(actionPath, actionArgs));
+				var action = new ExecAction(actionPath, actionArgs);
+
+				taskDefinition.Actions.Add(action);
 
 				taskDefinition.Settings.Enabled = true;
 				taskDefinition.Settings.Hidden = false;
